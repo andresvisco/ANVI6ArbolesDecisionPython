@@ -22,7 +22,7 @@ datos = pd.read_csv('GenelbaFichadasArbolesDIFF.csv')
 feature_cols = ['DIFFMinutos','DocumentNumber']
 df = pd.DataFrame(data=datos, columns=['DIFFMinutos','DocumentNumber'])
 y=df['DIFFMinutos']
-
+AA="AA"
 print("Target: ", y)
 print("*"*60)
 print("DF: ", df)
