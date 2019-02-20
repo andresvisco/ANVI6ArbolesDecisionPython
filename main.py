@@ -23,7 +23,7 @@ feature_cols = ['DIFFMinutos','DocumentNumber']
 df = pd.DataFrame(data=datos, columns=['DIFFMinutos','DocumentNumber'])
 y=df['DIFFMinutos']
 x="A"
-
+b="C"
 
 print("Target: ", y)
 print("*"*60)
