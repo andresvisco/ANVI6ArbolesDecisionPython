@@ -1,5 +1,4 @@
 import sklearn
-from sklearn.datasets import load_iris
 
 import pandas as pd
 from sklearn.tree import DecisionTreeClassifier
@@ -13,16 +12,11 @@ from sklearn import tree
 import graphviz
 import numpy as np
 
-iris = load_iris()
-data1 = pd.DataFrame(data=iris['target'],columns=['target'])
-data1.to_csv('datairis.csv')
-
-
 datos = pd.read_csv('GenelbaFichadasArbolesDIFF.csv')
 feature_cols = ['DIFFMinutos','DocumentNumber']
 df = pd.DataFrame(data=datos, columns=['DIFFMinutos','DocumentNumber'])
 y=df['DIFFMinutos']
-AA="AA"
+
 print("Target: ", y)
 print("*"*60)
 print("DF: ", df)
