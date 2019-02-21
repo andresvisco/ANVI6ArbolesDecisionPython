@@ -1,0 +1,13 @@
+AREA,ID_AREA
+Administracion y finanzas,1
+Calidad,2
+ControldeGestión,3
+GestióndeEquipos,4
+Ingenieria,5
+Logistica,6
+MedioAmbiente,7
+Operaciones,8
+RecursosHumanos,9
+Servicios,10
+Sistemas,11
+Suministros,12
