@@ -16,17 +16,17 @@ import os
 os.environ["PATH"] += os.pathsep + 'C://Program Files (x86)//Graphviz2.38//bin'
 
 
-datos = pd.read_csv('DataSets/GenelbaFichadasArbolesDIFF.csv')
-feature_cols = ['DIFFMinutos','DocumentNumber']
-df = pd.DataFrame(data=datos, columns=['DIFFMinutos','DocumentNumber'])
-y=df['DIFFMinutos']
+datos = pd.read_csv('DataSets/GenelbaFichadasArbolesDIFFAREARetraso.csv')
+feature_cols = ['DIFFAgrupadoID','AREA_ID','DIA_ID']
+df = pd.DataFrame(data=datos, columns=['DIFFAgrupadoID','AREA_ID','DIA_ID'])
+y=df['DIFFAgrupadoID']
 
 print("Target: ", y)
 print("*"*60)
 print("DF: ", df)
 
 
-dtree=DecisionTreeClassifier(criterion="entropy", splitter="best", max_depth=5)
+dtree=DecisionTreeClassifier(criterion="gini", splitter="best", max_depth=4)
 dtree.fit(df, y)
 
 # dot_data = StringIO()
@@ -45,8 +45,8 @@ for node in nodes:
         new_text_values = []
         for v in values:
             new_text_values.append(v)
-            if v.__contains__('DIFFMinutos <= '):
-                pf = v.replace('\"DIFFMinutos <= ', '')
+            if v.__contains__('DIFFAgrupadoID <= '):
+                pf = v.replace('\"DIFFAgrupadoID <= ', '')
                 diffVal = float(pf)
 
             if v.__contains__('samples'):
@@ -64,4 +64,4 @@ for node in nodes:
             node.set_fillcolor("blue")
         else:
             node.set_fillcolor("forestgreen")
-graph.write_png('colored_tree.png')
+graph.write_png('colored_treeARBOLAREARetraso.png')

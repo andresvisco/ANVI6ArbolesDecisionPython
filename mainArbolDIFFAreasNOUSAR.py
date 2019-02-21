@@ -3,7 +3,7 @@ import numpy as np
 from sklearn.cluster import KMeans  
 import pandas as pd
 
-datos = pd.read_csv('GenelbaFichadasArbolesDIFFArea.csv')
+datos = pd.read_csv('DataSets/GenelbaFichadasArbolesDIFFAREARetraso.csv')
 DF = pd.DataFrame(datos)
 X = np.array(DF)
 
